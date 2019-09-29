@@ -8,6 +8,8 @@ $(".val1").click(function () {
     }
     $(".d1").text(x);
     $(".d2").text(x);
+    $(".left").text(x);
+    $("#budget").val('');
 });
 
 $(".val2").click(function () {
@@ -15,6 +17,7 @@ $(".val2").click(function () {
     if (t == '') { alert("YOU MUST ENTER SOMETHING"); }
     else {
         console.log(t);
+        $("#item").val('');
     }
 });
 
@@ -23,6 +26,7 @@ $(".val3").click(function () {
     if (y == '') { alert("YOU MUST ENTER SOMETHING"); }
     else {
         console.log(y);
+        $("#spent").val('');
         add(t, y);
         update(x, y);
 
@@ -38,10 +42,18 @@ function add(t, y) {
 
 function update(x, y) {
     var z;
-    if (y < x) 
-    {
-        z = x - y;
+    z=x;
+    if (y < z) {
+        z = z - y;
         $(".left").text(z);
     }
-    else { alert("insufficient balance"); }
+    else {
+        alert("insufficient balance");
+       
+    }
 }
+
+$(".clear").click(function () {
+    $("#main").find("*").remove();
+    $(".left").text(x);
+});
