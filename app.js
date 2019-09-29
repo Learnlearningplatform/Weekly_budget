@@ -1,7 +1,7 @@
 var t;
 var x;
 $(".val1").click(function () {
-     x = $("#budget").val();
+    x = $("#budget").val();
     if (x == '') { alert("YOU MUST ENTER SOMETHING"); }
     else {
         console.log(x);
@@ -24,15 +24,24 @@ $(".val3").click(function () {
     else {
         console.log(y);
         add(t, y);
-      
+        update(x, y);
 
     }
 });
 
-function add(t,y)
-{
-   $("#main").append(`<li class="list-group-item d-flex justify-content-between align-items-center">
+function add(t, y) {
+    $("#main").append(`<li class="list-group-item d-flex justify-content-between align-items-center">
    ${t}
    <span class="badge badge-primary badge-pill">${y}</span>
 </li>`)
+}
+
+function update(x, y) {
+    var z;
+    if (y < x) 
+    {
+        z = x - y;
+        $(".left").text(z);
+    }
+    else { alert("insufficient balance"); }
 }
