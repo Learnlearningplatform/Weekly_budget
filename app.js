@@ -59,3 +59,12 @@ $(".clear").click(function () {
     z=x;
 });
 
+$(".reset").click(function(){
+x=0;
+alert("enter you budget again");
+$(".left").text(x);
+$(".d1").text(x);
+$(".d2").text(x);
+$("#main").find("*").remove();
+});
+
