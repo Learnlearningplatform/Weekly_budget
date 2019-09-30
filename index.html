@@ -22,7 +22,7 @@
 <body>
     <div class="container-fluid text-center">
         <br><br>
-        <h1 style="color: whitesmoke">WEEKLY BUDGET APP</h1>
+        <h1 style="color: whitesmoke"><strong>WEEKLY BUDGET APP</strong></h1>
         <br><br>
         <div class="input-group half mx-auto">
             <div class="input-group-prepend">
@@ -33,6 +33,7 @@
 
         </div>
         <button type="button" class="btn btn-secondary val1">Submit</button>
+        <button type="button" class="btn btn-secondary reset">Reset</button>
 
 
         <br><br><br>
@@ -41,27 +42,30 @@
                 style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
                 <h2 STYLE="color: whitesmoke">ENTER YOUR EXPENSES HERE</h2>
                 <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="input-group  mx-auto">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">REASON</span>
+                <form class="text-center p-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group  mx-auto">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">REASON</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="ex:transport" id="item">
                             </div>
-                            <input type="text" class="form-control" placeholder="ex:transport" id="item">
-                        </div>
-                        <button type="button" class="btn btn-danger val2">Submit</button>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="input-group mx-auto">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">AMOUNT</span>
-                            </div>
-                            <input type="number" class="form-control" placeholder="ex:100" id="spent">
                         </div>
-                        <button type="button" class="btn btn-danger val3">Submit</button>
+
+                        <div class="col-md-6">
+                            <div class="input-group mx-auto">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">AMOUNT</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="ex:100" id="spent">
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+                    <button type="button" class="btn btn-danger val3 mt-2">ADD</button>
+                </form>
                 <div class="text-white text-center py-5 px-4">
                     <div>
                         <h2 class="card-title h1-responsive  mb-5 font-bold"><strong>YOUR BUDGET DETAILS</strong></h2>

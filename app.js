@@ -1,10 +1,13 @@
 var t;
 var x;
+var z;
+var y;
 $(".val1").click(function () {
     x = $("#budget").val();
     if (x == '') { alert("YOU MUST ENTER SOMETHING"); }
     else {
         console.log(x);
+        z = x;
     }
     $(".d1").text(x);
     $(".d2").text(x);
@@ -12,25 +15,28 @@ $(".val1").click(function () {
     $("#budget").val('');
 });
 
-$(".val2").click(function () {
-    t = $("#item").val();
-    if (t == '') { alert("YOU MUST ENTER SOMETHING"); }
-    else {
-        console.log(t);
-        $("#item").val('');
-    }
-});
+
+
 
 $(".val3").click(function () {
-    var y = $("#spent").val();
-    if (y == '') { alert("YOU MUST ENTER SOMETHING"); }
+    y = $("#spent").val();
+    t = $("#item").val();
+    if (y == '' || t == '') { alert("ALL FILEDS ARE MANDATORY"); }
     else {
+        console.log(z);
         console.log(y);
+        console.log(t);
+        $("#item").val('');
         $("#spent").val('');
-        add(t, y);
-        update(x, y);
-
+        if (y <= z) {
+            add(t, y);
+           z=update(y, z);
+        }
+        else {
+            alert("INSUFFICIENT BALANCE");
+        }
     }
+
 });
 
 function add(t, y) {
@@ -40,20 +46,16 @@ function add(t, y) {
 </li>`)
 }
 
-function update(x, y) {
-    var z;
-    z=x;
-    if (y < z) {
-        z = z - y;
-        $(".left").text(z);
-    }
-    else {
-        alert("insufficient balance");
-       
-    }
+function update(y, z) {
+    z = z - y;
+    $(".left").text(z);
+    return z;
+
 }
 
 $(".clear").click(function () {
     $("#main").find("*").remove();
     $(".left").text(x);
+    z=x;
 });
+
